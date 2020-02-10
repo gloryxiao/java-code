@@ -1,4 +1,4 @@
-package com.sean.base.maze;
+package com.sean.code.maze;
 
 import java.util.Scanner;
 
