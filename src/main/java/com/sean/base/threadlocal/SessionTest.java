@@ -1,4 +1,4 @@
-package com.sean.base;
+package com.sean.base.threadlocal;
 
 public class SessionTest {
     private static ThreadLocal<SessionTest> session =  ThreadLocal.withInitial(SessionTest::new);

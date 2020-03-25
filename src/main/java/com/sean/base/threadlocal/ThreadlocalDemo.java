@@ -1,4 +1,5 @@
-package com.sean.base;
+package com.sean.base.threadlocal;
+
 
 public class ThreadlocalDemo {
     public static void main(String[] args){
