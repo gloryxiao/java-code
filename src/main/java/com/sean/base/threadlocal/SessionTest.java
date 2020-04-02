@@ -22,11 +22,11 @@ public class SessionTest {
     }
 
     public void echoName() {
-        System.out.println(getName());
+        System.out.println(Thread.currentThread().getName() + ":" + getName());
     }
 
     // 内存地址
     public void echo() {
-        System.out.println(System.identityHashCode(session));
+        System.out.println(Thread.currentThread().getName() + ":" + System.identityHashCode(session));
     }
 }
