@@ -7,6 +7,12 @@
     <groupId>com.sean.base</groupId>
     <artifactId>code</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <dependencies>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.2.6</version>
+        </dependency>
+    </dependencies>
 
 </project>
