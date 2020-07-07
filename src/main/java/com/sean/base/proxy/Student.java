@@ -1,5 +1,8 @@
 package com.sean.base.proxy;
 
+/**
+ * @author sean
+ */
 public class Student implements IPerson {
     @Override
     public void speak() {

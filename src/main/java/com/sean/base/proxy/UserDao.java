@@ -1,7 +1,7 @@
 package com.sean.base.proxy;
 
 public class UserDao {
-    /*
+    /**
     *   没有借口声明，使用cglib创建动态代理
     *
     */
