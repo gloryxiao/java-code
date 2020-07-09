@@ -1,14 +1,19 @@
 package com.sean.base.proxy;
 
+import com.sean.utils.ProxyCodeUtil;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
+/**
+ * @author sean
+ */
 public class JdkProxy {
-    private static class StudentHandler implements InvocationHandler {
+    public static class StudentHandler implements InvocationHandler {
         private IPerson person;
 
-        StudentHandler(IPerson person) {
+        public StudentHandler(IPerson person) {
             this.person = person;
         }
 
@@ -27,6 +32,8 @@ public class JdkProxy {
 
         person.speak();
         person.action();
+        String proxyClass = "ProxySeanClass";
+        ProxyCodeUtil.generateClassFile(person.getClass(), proxyClass);
 
     }
 }
