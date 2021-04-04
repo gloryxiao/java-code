@@ -1,5 +1,8 @@
 package com.sean.base.threadlocal;
 
+/**
+ * @author sean
+ */
 public class SessionTest {
     private static ThreadLocal<SessionTest> session =  ThreadLocal.withInitial(SessionTest::new);
     private String name;

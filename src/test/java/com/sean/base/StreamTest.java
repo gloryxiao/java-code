@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 public class StreamTest {
     @Test
     public void testStream() {
+        Math.max(1, 2);
         List<Stock> list = Arrays.asList(new Stock("HK0001", 1), new Stock("HK0002", 0.01f),
                 new Stock("SH0003", 0.3f), new Stock("SZ0004", 1900.8f));
         List<String> names = list.stream().filter(e -> {System.out.println(e.getName()); return true;}).
