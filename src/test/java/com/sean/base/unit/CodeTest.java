@@ -1,6 +1,7 @@
 package com.sean.base.unit;
 
 import com.sean.code.base.CodeTree;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class CodeTest {
@@ -14,5 +15,26 @@ public class CodeTest {
                 inorder, 0, inorder.length - 1);
 
         codeTree.show(root);
+    }
+
+    @Test
+    public void testString1() {
+        String s = "iot.com";
+        replaceSrt(s);
+        Assert.assertEquals("iot.com", s);
+        StringBuffer s2 = new StringBuffer(s);
+        replaceStr(s2);
+        Assert.assertEquals("aa.com", s2.toString());
+
+    }
+
+
+    private void replaceSrt(String source) {
+        String result = source.replaceFirst("iot", "aa");
+        System.out.println(result);
+    }
+
+    private void replaceStr(StringBuffer source) {
+        source.replace(0, 3 ,"aa");
     }
 }

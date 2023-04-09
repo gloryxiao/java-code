@@ -1,11 +1,9 @@
 package com.sean.code.base;
 
-import sun.awt.X11.XModalityProtocol;
-
-import java.util.IllegalFormatException;
-
 /**
  * @author sean
+ * 重建二叉树
+ * 前序遍历和种序遍历
  */
 public class CodeTree {
     public static class TreeNode {
