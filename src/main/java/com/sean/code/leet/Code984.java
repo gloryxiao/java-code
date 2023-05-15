@@ -24,6 +24,25 @@ package com.sean.code.leet;
  */
 public class Code984 {
     public String strWithout3a3b(int a, int b) {
-        
+        StringBuilder sb = new StringBuilder();
+        while (a > 0 || b > 0) {
+            boolean writeA = false;
+            if (a > b) {
+                writeA = true;
+                if (sb.length() >= 2 && sb.substring(sb.length() - 2, sb.length()).equals("aa")) {
+                    writeA = false;
+                }
+            } else if (sb.length() >= 2 && sb.substring(sb.length() - 2, sb.length()).equals("bb")) {
+                writeA = true;
+            }
+            if (writeA) {
+                sb.append("a");
+                a --;
+            } else {
+                sb.append("b");
+                b --;
+            }
+        }
+        return sb.toString();
     }
 }

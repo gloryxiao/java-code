@@ -124,21 +124,21 @@ public class JUCTest {
             try {
                 while (count <= 10) {
                     if (count % 3 == 0) {
+                        log.info("thread：{}， count: {}", Thread.currentThread().getName(), count);
+                        count ++;
                     }
-                    log.info("thread：{}， count: {}", Thread.currentThread().getName(), count);
-                    count ++;
+                    log.info("thread：{}， count: {}, noop", Thread.currentThread().getName(), count);
 
                     TimeUnit.SECONDS.sleep(1);
                     condition.signal();
                     condition.await();
-                }
-
+                    }
                 } catch (Exception e) {
                     log.info("err.", e);
                 } finally {
                     log.info("thread: {}, release lock", Thread.currentThread().getName());
-                condition.signal();
-                lock.unlock();
+                    condition.signal();
+                    lock.unlock();
                 }
         });
 
@@ -146,10 +146,11 @@ public class JUCTest {
             lock.lock();
             try {
                 while (count <= 10) {
-                    if (count % 3 == 0) {
+                    if (count % 3 == 1) {
+                        log.info("thread：{}， count: {}", Thread.currentThread().getName(), count);
+                        count ++;
                     }
-                    log.info("thread：{}， count: {}", Thread.currentThread().getName(), count);
-                    count ++;
+                    log.info("thread：{}， count: {}, noop", Thread.currentThread().getName(), count);
 
                     TimeUnit.SECONDS.sleep(1);
                     condition.signal();
@@ -169,16 +170,16 @@ public class JUCTest {
             lock.lock();
             try {
                 while (count <= 10) {
-                    if (count % 3 == 0) {
-                    }
-                    log.info("thread：{}， count: {}", Thread.currentThread().getName(), count);
-                    count ++;
+                    if (count % 3 == 2) {
+                        log.info("thread：{}， count: {}", Thread.currentThread().getName(), count);
+                        count ++;
 
+                    }
+                    log.info("thread：{}， count: {}, noop", Thread.currentThread().getName(), count);
                     TimeUnit.SECONDS.sleep(1);
                     condition.signal();
                     condition.await();
                 }
-
             } catch (Exception e) {
                 log.info("err.", e);
             } finally {
